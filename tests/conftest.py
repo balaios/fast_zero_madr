@@ -8,7 +8,7 @@ from fast_zero_madr.app import app
 from fast_zero_madr.database import get_session
 from fast_zero_madr.models import table_registry
 from fast_zero_madr.security import get_password_hash
-from tests.factories import UserFactory
+from tests.factories import BookFactory, NovelistFactory, UserFactory
 
 
 @pytest.fixture
@@ -69,6 +69,28 @@ def other_user(session):
     other_user.clean_password = 'testtest'
 
     return other_user
+
+
+@pytest.fixture
+def novelist(session):
+    novelist = NovelistFactory()
+
+    session.add(novelist)
+    session.commit()
+    session.refresh(novelist)
+
+    return novelist
+
+
+@pytest.fixture
+def book(session, novelist):
+    book = BookFactory(novelist_id=novelist.id)
+
+    session.add(book)
+    session.commit()
+    session.refresh(book)
+
+    return book
 
 
 @pytest.fixture

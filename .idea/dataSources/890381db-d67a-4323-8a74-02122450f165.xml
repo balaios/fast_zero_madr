@@ -11,9 +11,9 @@
 4||10|c|G
 4||10|C|G
 4||10|T|G</Grants>
-      <IntrospectionStateNumber>746</IntrospectionStateNumber>
+      <IntrospectionStateNumber>745</IntrospectionStateNumber>
       <ServerVersion>16.4</ServerVersion>
-      <StartupTime>1724099193</StartupTime>
+      <StartupTime>1724163428</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -1407,7 +1407,7 @@ true posixrules
 13212||10|C|G
 13212||-9223372036854775808|U|G
 13212||10|U|G</Grants>
-      <IntrospectionStateNumber>746</IntrospectionStateNumber>
+      <IntrospectionStateNumber>745</IntrospectionStateNumber>
       <ObjectId>16384</ObjectId>
       <OwnerName>app_user</OwnerName>
     </database>
@@ -4831,40 +4831,68 @@ true posixrules
     <schema id="264" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>746</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2024-08-19.20:26:37</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>745</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2024-08-20.14:19:04</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>524</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <sequence id="265" parent="264" name="users_id_seq">
-      <ObjectId>16394</ObjectId>
+    <sequence id="265" parent="264" name="books_id_seq">
+      <ObjectId>16416</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>744</StateNumber>
       <StoredType>integer|0s</StoredType>
       <OwnerName>app_user</OwnerName>
     </sequence>
-    <table id="266" parent="264" name="alembic_version">
+    <sequence id="266" parent="264" name="novelists_id_seq">
+      <ObjectId>16407</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>744</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <OwnerName>app_user</OwnerName>
+    </sequence>
+    <sequence id="267" parent="264" name="users_id_seq">
+      <ObjectId>16394</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>743</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <OwnerName>app_user</OwnerName>
+    </sequence>
+    <table id="268" parent="264" name="alembic_version">
       <ObjectId>16389</ObjectId>
       <StateNumber>743</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>app_user</OwnerName>
     </table>
-    <table id="267" parent="264" name="users">
-      <ObjectId>16395</ObjectId>
+    <table id="269" parent="264" name="books">
+      <ObjectId>16417</ObjectId>
       <StateNumber>744</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>app_user</OwnerName>
     </table>
-    <column id="268" parent="266" name="version_num">
+    <table id="270" parent="264" name="novelists">
+      <ObjectId>16408</ObjectId>
+      <StateNumber>744</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>app_user</OwnerName>
+    </table>
+    <table id="271" parent="264" name="users">
+      <ObjectId>16395</ObjectId>
+      <StateNumber>743</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>app_user</OwnerName>
+    </table>
+    <column id="272" parent="268" name="version_num">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>743</StateNumber>
       <StoredType>varchar(32)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="269" parent="266" name="alembic_version_pkc">
+    <index id="273" parent="268" name="alembic_version_pkc">
       <ColNames>version_num</ColNames>
       <ObjectId>16392</ObjectId>
       <Primary>1</Primary>
@@ -4875,90 +4903,176 @@ true posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="270" parent="266" name="alembic_version_pkc">
+    <key id="274" parent="268" name="alembic_version_pkc">
       <ObjectId>16393</ObjectId>
       <Primary>1</Primary>
       <StateNumber>743</StateNumber>
       <UnderlyingIndexId>16392</UnderlyingIndexId>
     </key>
-    <column id="271" parent="267" name="id">
-      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+    <column id="275" parent="269" name="id">
+      <DefaultExpression>nextval(&apos;books_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>744</StateNumber>
       <StoredType>integer|0s</StoredType>
-      <SequenceId>16394</SequenceId>
+      <SequenceId>16416</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="272" parent="267" name="username">
+    <column id="276" parent="269" name="title">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>744</StateNumber>
       <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="273" parent="267" name="password">
+    <column id="277" parent="269" name="year">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>744</StateNumber>
-      <StoredType>varchar|0s</StoredType>
-      <TypeId>1043</TypeId>
+      <StoredType>timestamp|0s</StoredType>
+      <TypeId>1114</TypeId>
     </column>
-    <column id="274" parent="267" name="email">
+    <column id="278" parent="269" name="novelist_id">
       <NotNull>1</NotNull>
       <Position>4</Position>
+      <StateNumber>744</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="279" parent="269" name="books_novelist_id_fkey">
+      <ColNames>novelist_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16425</ObjectId>
+      <StateNumber>744</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16408</RefTableId>
+    </foreign-key>
+    <index id="280" parent="269" name="books_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16423</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>744</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="281" parent="269" name="books_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16424</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>744</StateNumber>
+      <UnderlyingIndexId>16423</UnderlyingIndexId>
+    </key>
+    <column id="282" parent="270" name="id">
+      <DefaultExpression>nextval(&apos;novelists_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>744</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <SequenceId>16407</SequenceId>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="283" parent="270" name="name">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
       <StateNumber>744</StateNumber>
       <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="275" parent="267" name="users_pkey">
+    <index id="284" parent="270" name="novelists_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16414</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>744</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="285" parent="270" name="novelists_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16415</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>744</StateNumber>
+      <UnderlyingIndexId>16414</UnderlyingIndexId>
+    </key>
+    <column id="286" parent="271" name="id">
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>743</StateNumber>
+      <StoredType>integer|0s</StoredType>
+      <SequenceId>16394</SequenceId>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="287" parent="271" name="username">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>743</StateNumber>
+      <StoredType>varchar|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="288" parent="271" name="password">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>743</StateNumber>
+      <StoredType>varchar|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="289" parent="271" name="email">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>743</StateNumber>
+      <StoredType>varchar|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="290" parent="271" name="users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16401</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>744</StateNumber>
+      <StateNumber>743</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="276" parent="267" name="users_username_key">
+    <index id="291" parent="271" name="users_username_key">
       <ColNames>username</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16405</ObjectId>
-      <StateNumber>744</StateNumber>
+      <StateNumber>743</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <index id="277" parent="267" name="users_email_key">
+    <index id="292" parent="271" name="users_email_key">
       <ColNames>email</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16403</ObjectId>
-      <StateNumber>744</StateNumber>
+      <StateNumber>743</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="278" parent="267" name="users_pkey">
+    <key id="293" parent="271" name="users_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16402</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>744</StateNumber>
+      <StateNumber>743</StateNumber>
       <UnderlyingIndexId>16401</UnderlyingIndexId>
     </key>
-    <key id="279" parent="267" name="users_username_key">
+    <key id="294" parent="271" name="users_username_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16406</ObjectId>
-      <StateNumber>744</StateNumber>
+      <StateNumber>743</StateNumber>
       <UnderlyingIndexId>16405</UnderlyingIndexId>
     </key>
-    <key id="280" parent="267" name="users_email_key">
+    <key id="295" parent="271" name="users_email_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16404</ObjectId>
-      <StateNumber>744</StateNumber>
+      <StateNumber>743</StateNumber>
       <UnderlyingIndexId>16403</UnderlyingIndexId>
     </key>
   </database-model>

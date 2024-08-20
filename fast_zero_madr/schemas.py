@@ -32,3 +32,33 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     username: str | None = None
+
+
+class NovelistSchema(BaseModel):
+    name: str
+
+
+class NovelistPublic(NovelistSchema):
+    id: int
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class NovelistPublicList(BaseModel):
+    novelists: list[NovelistPublic]
+
+
+class BookSchema(BaseModel):
+    title: str
+    year: int
+    novelist_id: int
+
+
+class BookPublic(BookSchema):
+    id: int
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class BookPublicList(BaseModel):
+    books: list[BookPublic]
