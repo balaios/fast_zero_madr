@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="799a4777-9ee8-42b0-a141-0bdc74716373" name="Changes" comment="feat: Initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/890381db-d67a-4323-8a74-02122450f165.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/890381db-d67a-4323-8a74-02122450f165.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/890381db-d67a-4323-8a74-02122450f165/storage_v2/_src_/database/app_db.XLfkqw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/890381db-d67a-4323-8a74-02122450f165/storage_v2/_src_/database/app_db.XLfkqw/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e30c4bd5-b333-4365-937f-37066be472c8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e30c4bd5-b333-4365-937f-37066be472c8/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fast_zero_madr/routes/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/fast_zero_madr/routes/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fast_zero_madr/routes/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/fast_zero_madr/routes/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fast_zero_madr/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/fast_zero_madr/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fast_zero_madr/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/fast_zero_madr/security.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_security.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_security.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +138,7 @@
       <workItem from="1724084833128" duration="6629000" />
       <workItem from="1724099080607" duration="6298000" />
       <workItem from="1724109802989" duration="6662000" />
-      <workItem from="1724116568204" duration="2391000" />
+      <workItem from="1724116568204" duration="3941000" />
     </task>
     <task id="LOCAL-00001" summary="chore: Add gitignore">
       <option name="closed" value="true" />
