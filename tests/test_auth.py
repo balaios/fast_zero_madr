@@ -22,7 +22,7 @@ def test_login_for_access_token_incorrect_email(client):
     )
 
     assert response.status_code == HTTPStatus.BAD_REQUEST
-    assert response.json() == {'detail': 'Incorrect email or password'}
+    assert response.json() == {'detail': 'Email ou senha incorretos'}
 
 
 def test_login_for_access_token_incorrect_password(client, user):
@@ -32,7 +32,7 @@ def test_login_for_access_token_incorrect_password(client, user):
     )
 
     assert response.status_code == HTTPStatus.BAD_REQUEST
-    assert response.json() == {'detail': 'Incorrect email or password'}
+    assert response.json() == {'detail': 'Email ou senha incorretos'}
 
 
 def test_token_expired_after_time(client, user):
@@ -55,7 +55,9 @@ def test_token_expired_after_time(client, user):
             },
         )
         assert response.status_code == HTTPStatus.UNAUTHORIZED
-        assert response.json() == {'detail': 'Could not validate credentials'}
+        assert response.json() == {
+            'detail': 'Não foi possível validar as credenciais'
+        }
 
 
 def test_token_wrong_user(client):
@@ -64,7 +66,7 @@ def test_token_wrong_user(client):
         data={'username': 'no_user@no_domain.com', 'password': 'testtest'},
     )
     assert response.status_code == HTTPStatus.BAD_REQUEST
-    assert response.json() == {'detail': 'Incorrect email or password'}
+    assert response.json() == {'detail': 'Email ou senha incorretos'}
 
 
 def test_token_wrong_password(client, user):
@@ -73,7 +75,7 @@ def test_token_wrong_password(client, user):
         data={'username': user.email, 'password': 'wrong_password'},
     )
     assert response.status_code == HTTPStatus.BAD_REQUEST
-    assert response.json() == {'detail': 'Incorrect email or password'}
+    assert response.json() == {'detail': 'Email ou senha incorretos'}
 
 
 def test_refresh_token(client, user, token):
@@ -105,4 +107,6 @@ def test_token_expired_dont_refresh(client, user):
             headers={'Authorization': f'Bearer {token_data}'},
         )
         assert response.status_code == HTTPStatus.UNAUTHORIZED
-        assert response.json() == {'detail': 'Could not validate credentials'}
+        assert response.json() == {
+            'detail': 'Não foi possível validar as credenciais'
+        }

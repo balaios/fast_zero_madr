@@ -4,32 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="799a4777-9ee8-42b0-a141-0bdc74716373" name="Changes" comment="feat: Add fastapi">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/pipeline.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entrypoint.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fast_zero_madr/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fast_zero_madr/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fast_zero_madr/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fast_zero_madr/routes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fast_zero_madr/routes/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fast_zero_madr/routes/users.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fast_zero_madr/schemas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fast_zero_madr/security.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fast_zero_madr/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/factories.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_security.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_users.py" afterDir="false" />
+    <list default="true" id="799a4777-9ee8-42b0-a141-0bdc74716373" name="Changes" comment="feat: Initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/890381db-d67a-4323-8a74-02122450f165.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/890381db-d67a-4323-8a74-02122450f165.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/890381db-d67a-4323-8a74-02122450f165/storage_v2/_src_/database/app_db.XLfkqw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/890381db-d67a-4323-8a74-02122450f165/storage_v2/_src_/database/app_db.XLfkqw/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e30c4bd5-b333-4365-937f-37066be472c8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e30c4bd5-b333-4365-937f-37066be472c8/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fast_zero_madr/routes/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/fast_zero_madr/routes/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fast_zero_madr/routes/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/fast_zero_madr/routes/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fast_zero_madr/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/fast_zero_madr/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fast_zero_madr/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/fast_zero_madr/security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_security.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_users.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Stub" />
-        <option value="Python Script" />
         <option value="Dockerfile" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -63,6 +51,9 @@
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -78,6 +69,9 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Docker.compose.yaml.madr_database: Compose Deployment.executor": "Run",
+    "Python tests.pytest for test_users.test_create_user_email_already_exists.executor": "Coverage",
+    "Python tests.pytest for test_users.test_update_user.executor": "Run",
+    "Python.fastapi.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -89,7 +83,7 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Python",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -105,7 +99,9 @@
   </component>
   <component name="RunManager">
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="compose.yaml.madr_database: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -150,7 +146,10 @@
       <workItem from="1724084131000" duration="32000" />
       <workItem from="1724084177919" duration="32000" />
       <workItem from="1724084278537" duration="541000" />
-      <workItem from="1724084833128" duration="6214000" />
+      <workItem from="1724084833128" duration="6629000" />
+      <workItem from="1724099080607" duration="6298000" />
+      <workItem from="1724109802989" duration="6662000" />
+      <workItem from="1724116568204" duration="2391000" />
     </task>
     <task id="LOCAL-00001" summary="chore: Add gitignore">
       <option name="closed" value="true" />
@@ -168,16 +167,36 @@
       <option name="project" value="LOCAL" />
       <updated>1724076188482</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: Initial commit">
+      <option name="closed" value="true" />
+      <created>1724096061367</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1724096061368</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: Add gitignore" />
     <MESSAGE value="chore: Add taskipy and ruff" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: Add taskipy and ruff" />
+    <MESSAGE value="feat: Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Initial commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -189,5 +208,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/fast_zero_madr$pytest_for_test_users_test_update_user.coverage" NAME="pytest for test_users.test_update_user Coverage Results" MODIFIED="1724115796826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/fast_zero_madr$pytest_for_test_users_test_create_user_email_already_exists.coverage" NAME="pytest for test_users.test_create_user_email_already_exists Coverage Results" MODIFIED="1724115922142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>

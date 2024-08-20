@@ -31,13 +31,13 @@ def login_for_access_token(
     if not user:
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
-            detail='Incorrect email or password',
+            detail='Email ou senha incorretos',
         )
 
     if not verify_password(form_data.password, user.password):
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
-            detail='Incorrect email or password',
+            detail='Email ou senha incorretos',
         )
 
     access_token = create_access_token(data={'sub': user.email})

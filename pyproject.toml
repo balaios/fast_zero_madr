@@ -45,7 +45,7 @@ addopts = '-p no:warnings'
 
 [tool.taskipy.tasks]
 lint = 'ruff check . && ruff check . --diff'
-format = 'ruff check . --fix && ruff format .'
+format = 'ruff format . && ruff check . --fix'
 run = 'fastapi dev fast_zero_madr/app.py'
 pre_test = 'task lint'
 test = 'pytest -s -x --cov=fast_zero_madr -vv'

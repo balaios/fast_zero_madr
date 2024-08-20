@@ -28,7 +28,7 @@ def test_create_user_username_already_exists(client, user):
         },
     )
     assert response.status_code == HTTPStatus.BAD_REQUEST
-    assert response.json() == {'detail': 'Username already exists'}
+    assert response.json() == {'detail': 'Conta já cadastrada'}
 
 
 def test_create_user_email_already_exists(client, user):
@@ -41,7 +41,7 @@ def test_create_user_email_already_exists(client, user):
         },
     )
     assert response.status_code == HTTPStatus.BAD_REQUEST
-    assert response.json() == {'detail': 'Email already exists'}
+    assert response.json() == {'detail': 'Email já cadastrado'}
 
 
 def test_update_user(client, user, token):
@@ -73,7 +73,7 @@ def test_update_user_with_wrong_user(client, other_user, token):
         },
     )
     assert response.status_code == HTTPStatus.FORBIDDEN
-    assert response.json() == {'detail': 'Not enough permissions'}
+    assert response.json() == {'detail': 'Não autorizado'}
 
 
 def test_update_user_with_registered_user(client, user, token):
@@ -88,7 +88,7 @@ def test_update_user_with_registered_user(client, user, token):
     )
 
     assert response.status_code == HTTPStatus.FORBIDDEN
-    assert response.json() == {'detail': 'Not enough permissions'}
+    assert response.json() == {'detail': 'Não autorizado'}
 
 
 def test_delete_user(client, user, token):
@@ -97,7 +97,7 @@ def test_delete_user(client, user, token):
     )
 
     assert response.status_code == HTTPStatus.OK
-    assert response.json() == {'message': 'User deleted'}
+    assert response.json() == {'message': 'Conta deletada com sucesso'}
 
 
 def test_delete_user_wrong_user(client, other_user, token):
@@ -106,4 +106,4 @@ def test_delete_user_wrong_user(client, other_user, token):
         headers={'Authorization': f'Bearer {token}'},
     )
     assert response.status_code == HTTPStatus.FORBIDDEN
-    assert response.json() == {'detail': 'Not enough permissions'}
+    assert response.json() == {'detail': 'Não autorizado'}

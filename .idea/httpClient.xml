@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HttpClientEndpointsTabState">
+    <option name="requestToText" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;f27198593f5d949618492c56d19a870a0e237492&quot; value=&quot;###&amp;#10;POST http://localhost:8000/auth/refresh_token&quot; /&gt;&#10;  &lt;entry key=&quot;09aa839b22f427ae3873e11549a5ee51deca1388&quot; value=&quot;###&amp;#10;POST http://localhost:8000/users/&quot; /&gt;&#10;  &lt;entry key=&quot;433ca4c4f36a2d5a572c76aa5888ea7473bd1694&quot; value=&quot;###&amp;#10;PUT http://localhost:8000/users/{{user_id}}&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+  </component>
+</project>

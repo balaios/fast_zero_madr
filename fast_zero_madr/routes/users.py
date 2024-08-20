@@ -28,12 +28,12 @@ def create_user(user: UserSchema, session: T_Session):
         if db_user.username == user.username:
             raise HTTPException(
                 status_code=HTTPStatus.BAD_REQUEST,
-                detail='Username already exists',
+                detail='Conta já cadastrada',
             )
         elif db_user.email == user.email:
             raise HTTPException(
                 status_code=HTTPStatus.BAD_REQUEST,
-                detail='Email already exists',
+                detail='Email já cadastrado',
             )
 
     hashed_password = get_password_hash(user.password)
@@ -58,7 +58,7 @@ def update_user(
 ):
     if current_user.id != user_id:
         raise HTTPException(
-            status_code=HTTPStatus.FORBIDDEN, detail='Not enough permissions'
+            status_code=HTTPStatus.FORBIDDEN, detail='Não autorizado'
         )
 
     current_user.username = user.username
@@ -78,10 +78,10 @@ def delete_user(
 ):
     if current_user.id != user_id:
         raise HTTPException(
-            status_code=HTTPStatus.FORBIDDEN, detail='Not enough permissions'
+            status_code=HTTPStatus.FORBIDDEN, detail='Não autorizado'
         )
 
     session.delete(current_user)
     session.commit()
 
-    return {'message': 'User deleted'}
+    return {'message': 'Conta deletada com sucesso'}
