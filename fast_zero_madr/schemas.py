@@ -1,4 +1,11 @@
-from pydantic import BaseModel, ConfigDict, EmailStr
+from typing import Annotated
+
+from pydantic import AfterValidator, BaseModel, ConfigDict, EmailStr
+
+ClearUsername = Annotated[
+    str,
+    AfterValidator(lambda x: ' '.join(str(x).split()).lower()),
+]
 
 
 class Message(BaseModel):
@@ -6,7 +13,7 @@ class Message(BaseModel):
 
 
 class UserSchema(BaseModel):
-    username: str
+    username: ClearUsername
     email: EmailStr
     password: str
 
