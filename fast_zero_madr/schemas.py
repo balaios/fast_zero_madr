@@ -15,7 +15,7 @@ class Message(BaseModel):
 class UserSchema(BaseModel):
     username: ClearUsername
     email: EmailStr
-    password: str
+    senha: str
 
 
 class UserPublic(BaseModel):
@@ -34,31 +34,31 @@ class TokenData(BaseModel):
     username: str | None = None
 
 
-class NovelistSchema(BaseModel):
-    name: str
+class RomancistaSchema(BaseModel):
+    nome: str
 
 
-class NovelistPublic(NovelistSchema):
+class RomancistaPublic(RomancistaSchema):
     id: int
 
     model_config = ConfigDict(from_attributes=True)
 
 
-class NovelistPublicList(BaseModel):
-    novelists: list[NovelistPublic]
+class RomancistaPublicList(BaseModel):
+    romancistas: list[RomancistaPublic]
 
 
-class BookSchema(BaseModel):
-    title: str
-    year: int
-    novelist_id: int
+class LivroSchema(BaseModel):
+    titulo: str
+    ano: int
+    id_romancista: int
 
 
-class BookPublic(BookSchema):
+class LivroPublic(LivroSchema):
     id: int
 
     model_config = ConfigDict(from_attributes=True)
 
 
-class BookPublicList(BaseModel):
-    books: list[BookPublic]
+class LivroPublicList(BaseModel):
+    livros: list[LivroPublic]

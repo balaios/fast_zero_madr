@@ -1,6 +1,6 @@
 import factory.fuzzy
 
-from fast_zero_madr.models import Book, Novelist, User
+from fast_zero_madr.models import Livro, Romancista, User
 
 
 class UserFactory(factory.Factory):
@@ -9,20 +9,20 @@ class UserFactory(factory.Factory):
 
     username = factory.Sequence(lambda n: f'test{n}')
     email = factory.LazyAttribute(lambda obj: f'{obj.username}@test.com')
-    password = factory.LazyAttribute(lambda obj: f'{obj.username}@example.com')
+    senha = factory.LazyAttribute(lambda obj: f'{obj.username}123')
 
 
-class NovelistFactory(factory.Factory):
+class RomancistaFactory(factory.Factory):
     class Meta:
-        model = Novelist
+        model = Romancista
 
-    name = factory.Sequence(lambda n: f'test{n}')
+    nome = factory.Sequence(lambda n: f'test{n}')
 
 
-class BookFactory(factory.Factory):
+class LivroFactory(factory.Factory):
     class Meta:
-        model = Book
+        model = Livro
 
-    title = factory.Sequence(lambda n: f'test{n}')
-    year = factory.fuzzy.FuzzyInteger(1900, 2024)
-    novelist_id = None
+    titulo = factory.Sequence(lambda n: f'test{n}')
+    ano = factory.fuzzy.FuzzyInteger(1900, 2024)
+    id_romancista = None

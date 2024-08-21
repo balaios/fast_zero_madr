@@ -10,7 +10,7 @@ from fast_zero_madr.models import User
 from fast_zero_madr.schemas import Message, UserPublic, UserSchema
 from fast_zero_madr.security import get_current_user, get_password_hash
 
-router = APIRouter(prefix='/users', tags=['users'])
+router = APIRouter(prefix='/user', tags=['user'])
 
 T_Session = Annotated[Session, Depends(get_session)]
 T_CurrentUser = Annotated[User, Depends(get_current_user)]
@@ -36,10 +36,10 @@ def create_user(user: UserSchema, session: T_Session):
                 detail='Email já cadastrado',
             )
 
-    hashed_password = get_password_hash(user.password)
+    hashed_password = get_password_hash(user.senha)
 
     db_user = User(
-        username=user.username, password=hashed_password, email=user.email
+        username=user.username, senha=hashed_password, email=user.email
     )
 
     session.add(db_user)
@@ -62,7 +62,7 @@ def update_user(
         )
 
     current_user.username = user.username
-    current_user.password = get_password_hash(user.password)
+    current_user.senha = get_password_hash(user.senha)
     current_user.email = user.email
     session.commit()
     session.refresh(current_user)

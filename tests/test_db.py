@@ -4,7 +4,7 @@ from fast_zero_madr.models import User
 
 
 def test_create_user(session):
-    new_user = User(username='alice', password='secret', email='teste@test')
+    new_user = User(username='alice', senha='secret', email='teste@test')
     session.add(new_user)
     session.commit()
 

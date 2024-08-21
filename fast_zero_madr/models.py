@@ -10,31 +10,31 @@ class User:
 
     id: Mapped[int] = mapped_column(init=False, primary_key=True)
     username: Mapped[str] = mapped_column(unique=True)
-    password: Mapped[str]
+    senha: Mapped[str]
     email: Mapped[str] = mapped_column(unique=True)
 
 
 @table_registry.mapped_as_dataclass
-class Novelist:
-    __tablename__ = 'novelists'
+class Romancista:
+    __tablename__ = 'romancistas'
 
     id: Mapped[int] = mapped_column(init=False, primary_key=True)
-    name: Mapped[str]
+    nome: Mapped[str] = mapped_column(unique=True)
 
-    books: Mapped[list['Book']] = relationship(
-        init=False, back_populates='novelists', cascade='all, delete-orphan'
+    livros: Mapped[list['Livro']] = relationship(
+        init=False, back_populates='romancistas', cascade='all, delete-orphan'
     )
 
 
 @table_registry.mapped_as_dataclass
-class Book:
-    __tablename__ = 'books'
+class Livro:
+    __tablename__ = 'livros'
 
     id: Mapped[int] = mapped_column(init=False, primary_key=True)
-    title: Mapped[str] = mapped_column(unique=True)
-    year: Mapped[int]
-    novelist_id: Mapped[int] = mapped_column(ForeignKey('novelists.id'))
+    titulo: Mapped[str] = mapped_column(unique=True)
+    ano: Mapped[int]
+    id_romancista: Mapped[int] = mapped_column(ForeignKey('romancistas.id'))
 
-    novelists: Mapped[Novelist] = relationship(
-        init=False, back_populates='books'
+    romancistas: Mapped[Romancista] = relationship(
+        init=False, back_populates='livros'
     )

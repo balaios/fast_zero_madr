@@ -8,7 +8,7 @@ from fast_zero_madr.app import app
 from fast_zero_madr.database import get_session
 from fast_zero_madr.models import table_registry
 from fast_zero_madr.security import get_password_hash
-from tests.factories import BookFactory, NovelistFactory, UserFactory
+from tests.factories import LivroFactory, RomancistaFactory, UserFactory
 
 
 @pytest.fixture
@@ -46,7 +46,7 @@ def session(engine):
 @pytest.fixture
 def user(session):
     password = 'testtest'
-    user = UserFactory(password=get_password_hash(password))
+    user = UserFactory(senha=get_password_hash(password))
 
     session.add(user)
     session.commit()
@@ -60,7 +60,7 @@ def user(session):
 @pytest.fixture
 def other_user(session):
     password = 'testtest'
-    other_user = UserFactory(password=get_password_hash(password))
+    other_user = UserFactory(senha=get_password_hash(password))
 
     session.add(other_user)
     session.commit()
@@ -72,25 +72,47 @@ def other_user(session):
 
 
 @pytest.fixture
-def novelist(session):
-    novelist = NovelistFactory()
+def romancista(session):
+    romancista = RomancistaFactory()
 
-    session.add(novelist)
+    session.add(romancista)
     session.commit()
-    session.refresh(novelist)
+    session.refresh(romancista)
 
-    return novelist
+    return romancista
 
 
 @pytest.fixture
-def book(session, novelist):
-    book = BookFactory(novelist_id=novelist.id)
+def other_romancista(session):
+    other_romancista = RomancistaFactory()
 
-    session.add(book)
+    session.add(other_romancista)
     session.commit()
-    session.refresh(book)
+    session.refresh(other_romancista)
 
-    return book
+    return other_romancista
+
+
+@pytest.fixture
+def livro(session, romancista):
+    livro = LivroFactory(id_romancista=romancista.id)
+
+    session.add(livro)
+    session.commit()
+    session.refresh(livro)
+
+    return livro
+
+
+@pytest.fixture
+def other_livro(session, romancista):
+    other_livro = LivroFactory(id_romancista=romancista.id)
+
+    session.add(other_livro)
+    session.commit()
+    session.refresh(other_livro)
+
+    return other_livro
 
 
 @pytest.fixture
